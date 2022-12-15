@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :bookings
-  resources :favorites
   resources :listings
-  resources :users
+  resources :favorites
 
-  get '/hello', to: 'application#hello_world'
-  
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+ 
+  get "/user",  to: "users#show"
+  post "/users", to: "users#create"
+
 end
