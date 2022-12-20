@@ -20,11 +20,6 @@ Bundler.require(*Rails.groups)
 
 module Capstone
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
-
-    # This is set in apps generated with the --api flag, and removes session/cookie middleware
-    config.api_only = true
 
     # ▾ Must add these lines! ▾
     # Adding back cookies and session middleware
@@ -34,5 +29,11 @@ module Capstone
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
 
+        # Initialize configuration defaults for originally generated Rails version.
+        config.load_defaults 7.0
+
+        # This is set in apps generated with the --api flag, and removes session/cookie middleware
+        config.api_only = true
+        
   end
 end

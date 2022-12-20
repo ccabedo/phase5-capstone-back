@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+    skip_before_action :authorize
 
     def index
         render json: Listing.all, status: :ok
