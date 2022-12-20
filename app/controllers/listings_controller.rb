@@ -10,4 +10,5 @@ class ListingsController < ApplicationController
         render json: listing, status: :ok
     end
     
+    
 end

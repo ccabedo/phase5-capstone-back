@@ -23,4 +23,10 @@ class BookingsController < ApplicationController
         head :no_content
     end
     
+    private
+
+    def booking_params
+        params.permit(:review)
+    end
+
 end
