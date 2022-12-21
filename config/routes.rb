@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :favorites
 
   get "/listings", to: "listings#index"
-  get "/listings", to: "listings#show"
+  get "/listings/:id", to: "listings#show"
+
+  get "/favorites", to: "favorites#index"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

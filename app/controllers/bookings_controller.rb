@@ -17,13 +17,18 @@ class BookingsController < ApplicationController
     def update
         booking = Booking.find_by!(id: params[:id])
         booking.update!(review: params[:review])
+        # booking.update!(rating: params[:rating])
         render json: booking, status: :ok
     end
 
     def destroy
-        booking = Booking.find(params[:id])
-        booking.destroy
-        head :no_content
+        booking = Booking.find_by!(id: params[:id])
+        if booking
+            booking.destroy
+            head :no_content
+        else
+            render json: {error: "review not found"}, status: :not_found
+        end
     end
     
     private
