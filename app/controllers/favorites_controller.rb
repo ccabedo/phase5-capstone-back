@@ -1,9 +1,7 @@
-class ReviewsController < ApplicationController
-    skip_before_action :authorize
-
+class FavoritesController < ApplicationController
 
     def index
-        render json: Reviews.all, status: :ok
+        render json: Favorite.all, status: :ok
     end
     
 end
