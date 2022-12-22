@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     private
 
     def booking_params
-        params.permit(:review)
+        params.permit(:review, :rating, :user_id, :listing_id)
     end
 
 end
